@@ -1,4 +1,4 @@
-
+ 
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -213,6 +213,7 @@ public class home extends javax.swing.JFrame {
         // TODO add your handling code here:
         jButton1.setForeground(Color.red);
         jButton1.setBackground(new Color(255,255,255));
+        new ManageRoom().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -290,6 +291,7 @@ public class home extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        new NewStudent().setVisible(true);
         jButton1.setForeground(Color.red);
         jButton1.setBackground(new Color(255,255,255));
     }//GEN-LAST:event_jButton2ActionPerformed
