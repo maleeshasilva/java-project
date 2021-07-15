@@ -45,7 +45,6 @@ public class home extends javax.swing.JFrame {
         jButton12 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -194,15 +193,6 @@ public class home extends javax.swing.JFrame {
         });
         getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 0, 180, 60));
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jTextField1.setText("                     EZ HOSTEL MANAGEMENET SYSTEM");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 740, 81));
-
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/home background.PNG"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1570, -1));
 
@@ -215,10 +205,6 @@ public class home extends javax.swing.JFrame {
         jButton1.setBackground(new Color(255,255,255));
         new ManageRoom().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
         // TODO add your handling code here:
@@ -292,14 +278,15 @@ public class home extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         new NewStudent().setVisible(true);
-        jButton1.setForeground(Color.red);
-        jButton1.setBackground(new Color(255,255,255));
+        jButton2.setForeground(Color.red);
+        jButton2.setBackground(new Color(255,255,255));
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        jButton1.setForeground(Color.red);
-        jButton1.setBackground(new Color(255,255,255));
+        jButton3.setForeground(Color.red);
+        jButton3.setBackground(new Color(255,255,255));
+        new UpdateDeleteStudent().setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -395,6 +382,5 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

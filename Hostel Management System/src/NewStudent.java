@@ -34,7 +34,7 @@ public class NewStudent extends javax.swing.JFrame {
         try{
             Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/hostel","root","");
             Statement st=con.createStatement();
-            ResultSet rs =st.executeQuery("select * from where activate='Yes' and roomStatus='Not Booked'");
+            ResultSet rs =st.executeQuery("select * from room where activate='Yes' and roomStatus='Not Booked'");
             while(rs.next()){
                 i=1;
                 jComboBox1.addItem(rs.getString(1));
@@ -200,6 +200,11 @@ public class NewStudent extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/clear.png"))); // NOI18N
         jButton3.setText("Clear");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 387, -1, -1));
 
         jTextField8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -244,8 +249,57 @@ public class NewStudent extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        String roomStatus="Booked";
+        String mobileNo =jTextField1.getText();
+        String name =jTextField2.getText();
+        String father =jTextField3.getText();
+        String mother =jTextField4.getText();
+        String email=jTextField5.getText();
+        String address =jTextField6.getText();
+        String college =jTextField7.getText();
+        String aadhaar =jTextField8.getText();
+        String roomnumber =(String)jComboBox1.getSelectedItem();
+        String status ="living";
+        
+        
+        try{
+            
+         Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/hostel","root","");
+         PreparedStatement ps =con.prepareStatement("insert into student values(?,?,?,?,?,?,?,?,?,?)");
+         ps.setString(1,mobileNo);
+         ps.setString(2,name);
+         ps.setString(3,father);
+         ps.setString(4,mother);
+         ps.setString(5,email);
+         ps.setString(6,address);
+         ps.setString(7,college);
+         ps.setString(8,aadhaar);
+         ps.setString(9,roomnumber);
+         ps.setString(10,status);
+         ps.executeUpdate();
+         
+        
+         PreparedStatement ps1= con.prepareStatement("update room set roomStatus='"+roomStatus+"' where number=?");
+         ps1.setString(1,roomnumber);
+         ps1.executeUpdate();
+         JOptionPane.showMessageDialog(null,"Successfully Updated");
+         clear();
+         
+        }
+        catch(Exception e){
+            
+         JOptionPane.showMessageDialog(null,e);   
+           
+        }
+        
+        
         
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        clear();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
